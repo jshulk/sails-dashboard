@@ -1,0 +1,16 @@
+<section class="container" ng-controller="signinController">
+	<h1>Sign in</h1>
+	<form action="" class="content">
+		<fieldset ng-cloak>
+			<legend>Sign in form</legend>
+			<label for="username">Username</label>
+			<p class="error" ng-if="usernameError">{{usernameErrorMessage}}</p>
+			<input type="text" id="username" ng-class="{error: usernameError}" ng-model="userData.username" ng-keypress="hideError($event)">
+			<label for="password">Password</label>
+			<p class="error" ng-if="passwordError">{{passwordErrorMessage}}</p>
+			<input type="password" id="password" ng-class="{error: passwordError}" ng-model="userData.password" ng-keypress="hideError($event)">
+			<button ng-click="validateForm(1event)">Sign in</button>
+			<p class="error" ng-if="signInError">{{signInErrorMessage}}</p>
+		</fieldset>
+	</form>
+</section>
